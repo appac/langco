@@ -1,5 +1,5 @@
 {
-  "name": "language-list",
+  "name": "langco",
   "version": "1.0.0",
   "description": "Gets the language code for a given country, or vice versa.",
   "main": "index.js",
