@@ -6,6 +6,10 @@
   "scripts": {
     "build-docs": "documentation readme index.js --section=Usage"
   },
+  "repsitory": {
+    "type": "git",
+    "url": "git@github.com:appac/langco.git"
+  },
   "author": "Chris Apparicio <chris@apparicio.me>",
   "license": "MIT",
   "private": false,
