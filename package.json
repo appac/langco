@@ -1,0 +1,13 @@
+{
+  "name": "language-list",
+  "version": "1.0.0",
+  "description": "Gets the language code for a given country, or vice versa.",
+  "main": "index.js",
+  "author": "Chris Apparicio <chris@apparicio.me>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1"
+  }
+}
