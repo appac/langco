@@ -25,11 +25,19 @@ const langco = require('langco');
 #### Table of Contents
 
 -   [getName](#getname)
+    -   [Parameters](#parameters)
+    -   [Examples](#examples)
 -   [getCode](#getcode)
+    -   [Parameters](#parameters-1)
+    -   [Examples](#examples-1)
 -   [getNames](#getnames)
+    -   [Examples](#examples-2)
 -   [getCodes](#getcodes)
+    -   [Examples](#examples-3)
 -   [getNameList](#getnamelist)
+    -   [Examples](#examples-4)
 -   [getCodeList](#getcodelist)
+    -   [Examples](#examples-5)
 -   [getData](#getdata)
 
 ### getName
@@ -37,88 +45,96 @@ const langco = require('langco');
 Takes a language code and returns
 the appropriate language name.
 
-If no match is found, returns null;
+If no match is found, returns undefined;
 
-**Parameters**
+#### Parameters
 
 -   `languageCode` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-**Examples**
+#### Examples
 
 ```javascript
-langco.getName('ro'); // 'romanian; moldavian; moldovan'
+langco.getName('ro'); // 'romanian, moldavian, moldovan'
 ```
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** 
 
 ### getCode
 
 Takes a language name and returns
 the appropriate language code.
 
-If no match is found, returns null.
+If no match is found, returns undefined.
 
-**Parameters**
+#### Parameters
 
 -   `languageName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-**Examples**
+#### Examples
 
 ```javascript
 langco.getCode('romanian'); // 'ro'
 ```
 
-Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+Returns **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** 
 
 ### getNames
 
-Returns all language names as an array.
+Returns an iterator object containing all
+language names
 
-**Examples**
+You can turn this Iterator into an Array via the
+`Array.from` method, or using the spread operator.
+
+#### Examples
 
 ```javascript
-langco.getNames(); // [ 'zulu', 'chinese', 'zhuang; chuang' ... ]
+langco.getNames; // MapIterator { 'afar','abkhazian','avestan', ... }
 ```
 
-Returns **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
 ### getCodes
 
-Returns all language codes as an array.
+Returns an iterator object containing all
+language codes.
 
-**Examples**
+You can turn this Iterator into an Array via the
+`Array.from` method or using the spread operator.
+
+#### Examples
 
 ```javascript
-langoco.getCodes(); // [ 'zu', 'zh', 'za' ... ]
+langco.getCodes; // MapIterator { 'aa','ab','ae', ... }
 ```
 
-Returns **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
 ### getNameList
 
-Returns an object where language names
-are keys, and language codes are values.
+Returns an iterator object containing
+all map entires in [name, code] format
 
-**Examples**
+#### Examples
 
 ```javascript
-langco.getNameList(); // { zulu: 'zu', chinese: 'zh','zhuang; chuang': 'za' ... }
+langco.getNameList; // MapIterator { [ 'afar', 'aa' ], [ 'abkhazian', 'ab' ], ... }
 ```
 
-Returns **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
 ### getCodeList
 
-Returns an object where language codes
-are keys, and language names are values.
+Returns an iterator object containing
+all map entires in [code, name] format
 
-**Examples**
+#### Examples
 
 ```javascript
-langco.getCodeList(); // { zu: 'zulu', zh: 'chinese', 'za': 'zhuang; chuang' ... }
+langco.getCodeList; // MapIterator { [ 'aa', 'afar' ], [ 'ab', 'abkhazian' ], ... }
 ```
 
-Returns **[array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** 
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
 
 ### getData
 
